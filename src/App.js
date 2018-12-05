@@ -1,40 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import ProjectMap from './components/ProjectMap'
+import * as data from './data/data'
+import personal from './images/personal.jpg'
 
 class App extends React.Component {
-  state = {
-    projects: [{
-      title: 'first project',
-      text: 'first project text',
-      left: '10px',
-      top: '100px'
-    },
-    {
-      title: 'second project',
-      text: 'second project text',
-      left: '50px',
-      top: '100px'
-    },
-    {
-      title: 'third project',
-      text: 'third project text',
-      left: '90px',
-      top: '100px'
-    },
-    {
-      title: 'fourth project',
-      text: 'fourth project text',
-      left: '130px',
-      top: '100px'
-    }]
-  }
 
   render() {
+
+    console.log("test");
+    console.log(data);
     return (
-      <div>
-        <ProjectMap {...this.state} />
-        
+      <div className="outer">
+        <img src={personal} alt="barn full of bright ideas"></img>
+        <ProjectMap projects={data.default} />
+
       </div>
     );
   }
